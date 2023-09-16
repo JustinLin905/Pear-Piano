@@ -85,6 +85,8 @@ namespace OpenAI
 
         private void wordSearch(string _text) {
             Dictionary<string, string> unorderedMap = new Dictionary<string, string> {
+
+                // key signature
                 { "c major.", "C major has no sharps or flats." },
           
                 { "g major.", "G major has one sharp, F#."},
@@ -120,6 +122,114 @@ namespace OpenAI
                 { "b flat minor.", "B♭ minor has five flats, B♭, E♭, A♭, D♭, and G♭."},
                 { "e flat minor.", "E♭ minor has six flats, B♭, E♭, A♭, D♭, G♭, and C♭."},
                 { "a flat minor.", "A♭ minor has seven flats, B♭, E♭, A♭, D♭, G♭, C♭, and F♭."}
+
+                // triads
+                {"c major chord", "The notes in the C major chord are C, E, G."},
+                {"g major chord", "The notes in the G major chord are G, B, D."},
+                {"d major chord", "The notes in the D major chord are D, F#, A."},
+                {"a major chord", "The notes in the A major chord are A, C#, E."},
+                {"e major chord", "The notes in the E major chord are E, G#, B."},
+                {"b major chord", "The notes in the B major chord are B, D#, F#."},
+                {"f sharp major chord", "The notes in the F# major chord are F#, A#, C#."},
+                {"c sharp major chord", "The notes in the C# major chord are C#, E#, G#."},
+
+                {"a minor chord.", "The notes in the A minor chord are A, C, E."},
+
+                {"e minor chord.", "The notes in the E minor chord are E, G, B."},
+                {"b minor chord.", "The notes in the B flat minor chord are B, D, F sharp."},
+                {"f sharp minor chord.", "The notes in the F sharp minor chord are F sharp, A, C sharp."},
+                {"c sharp minor chord.", "The notes in the C sharp minor chord are C sharp, E, G sharp."},
+                {"g sharp minor chord.", "The notes in the G sharp minor chord are G sharp, B, D sharp."},
+                {"d sharp minor chord.", "The notes in the D sharp minor chord are D sharp, F sharp, A sharp."},
+                {"a sharp minor chord.", "The notes in the A sharp minor chord are A sharp, C sharp, E sharp."},
+
+                {"f major chord.", "The notes in the F major chord are F, A, C."},
+                {"b flat major chord.", "The notes in the B flat major chord are B flat, D, F."},
+                {"e flat major chord.", "The notes in the E flat major chord are E flat, G, B flat."},
+                {"a flat major chord.", "The notes in the A flat major chord are A flat, C, E flat."},
+                {"d flat major chord.", "The notes in the D flat major chord are D flat, F, A flat."},
+                {"g flat major chord.", "The notes in the G flat major chord are G flat, B flat, D flat."},
+                {"c flat major chord.", "The notes in the C flat major chord are C flat, E flat, G flat."},
+
+                {"d minor chord.", "The notes in the D minor chord are D, F, A."},
+                {"g minor chord.", "The notes in the G minor chord are G, B flat, D."},
+                {"c minor chord.", "The notes in the C minor chord are C, E flat, G."},
+                {"f minor chord.", "The notes in the F minor chord are F, A flat, C."},
+                {"b flat minor chord.", "The notes in the B flat minor chord are B flat, D flat, F."},
+                {"e flat minor chord.", "The notes in the E flat minor chord are E flat, G flat, B flat."},
+                {"a flat minor chord.", "The notes in the A flat minor chord are A flat, C flat, E flat."},
+
+                // dominant 7th
+                {"c major dominant seventh chord.", "The dominant seventh chord of C major is C, E, G, and B."},
+                {"g major dominant seventh chord.", "The dominant seventh chord of G major is G, B, D, and F♯."},
+                {"d major dominant seventh chord.", "The dominant seventh chord of D major is D, F♯, A, and C♯."},
+                {"a major dominant seventh chord.", "The dominant seventh chord of A major is A, C♯, E, and G♯."},
+                {"e major dominant seventh chord.", "The dominant seventh chord of E major is E, G♯, B, and D♯."},
+                {"b major dominant seventh chord.", "The dominant seventh chord of B major is B, D♯, F♯, and A#."},
+                {"f sharp major dominant seventh chord.", "The dominant seventh chord of F♯ major is F♯, A#, C♯, and E#."},
+                {"c sharp major dominant seventh chord.", "The dominant seventh chord of C♯ major is C♯, E#, G♯, and B#."},
+            
+                {"a minor dominant seventh chord.", "The dominant seventh chord of A minor is A, C, E, and G."},
+            
+                {"e minor dominant seventh chord.", "The dominant seventh chord of E minor is E, G, B, and D."},
+                {"b minor dominant seventh chord.", "The dominant seventh chord of B♭ minor is B, D, F♯, and A."},
+                {"f sharp minor dominant seventh chord.", "The dominant seventh chord of F♯ minor is F♯, A, C♯, and E."},
+                {"c sharp minor dominant seventh chord.", "The dominant seventh chord of C♯ minor is C♯, E, G♯, and B."},
+                {"g sharp minor dominant seventh chord.", "The dominant seventh chord of G♯ minor is G♯, B, D♯, and F♯"},
+                {"d sharp minor dominant seventh chord.", "The dominant seventh chord of D♯ minor is D♯, F♯, A♯, and C♯."},
+                {"a sharp minor dominant seventh chord.", "The dominant seventh chord of A♯ minor is A♯, C♯, E♯, and G♯."},
+            
+                {"f major dominant seventh chord.", "The dominant seventh chord of F major is F, A, C, and E."},
+                {"b flat major dominant seventh chord.", "The dominant seventh chord of B♭ major is B♭, D, F, and A."},
+                {"e flat major dominant seventh chord.", "The dominant seventh chord of E♭ major is E♭, G, B♭, and D."},
+                {"a flat major dominant seventh chord.", "The dominant seventh chord of A♭ major is A♭, C, E♭, and G."},
+                {"d flat major dominant seventh chord.", "The dominant seventh chord of D♭ major is D♭, F, A♭, and C."},
+                {"g flat major dominant seventh chord.", "The dominant seventh chord of G♭ major is G♭, B♭, D♭, and F."},
+                {"c flat major dominant seventh chord.", "The dominant seventh chord of C♭ major is C♭, E♭, G♭, and B♭."},
+            
+                {"d minor dominant seventh chord.", "The dominant seventh chord of D minor is D, F, A, and C."},
+                {"g minor dominant seventh chord.", "The dominant seventh chord of G minor is G, B♭, D, and F."},
+                {"c minor dominant seventh chord.", "The dominant seventh chord of C minor is C, E♭, G, and B♭."},
+                {"f minor dominant seventh chord.", "The dominant seventh chord of F minor is F, A♭, C, and E."},
+                {"b flat minor dominant seventh chord.", "The dominant seventh chord of B♭ minor is B♭, D♭, F, and A."},
+                {"e flat minor dominant seventh chord.", "The dominant seventh chord of E♭ minor is E♭, G♭, B♭, and D."},
+                {"a flat minor dominant seventh chord.", "The dominant seventh chord of A♭ minor is A♭, C♭, E♭, and G."},
+
+                // diminshed 7th
+                {"c major diminished seventh chord.", "The diminished seventh chord of C major is C, E♭, G♭, and A♭."},
+                {"g major diminished seventh chord.", "The diminished seventh chord of G major is G, B♭, D♭, and E♭."},
+                {"d major diminished seventh chord.", "The diminished seventh chord of D major is D, F, A♭, and B♭."},
+                {"a major diminished seventh chord.", "The diminished seventh chord of A major is A, C, E♭, and F♯."},
+                {"e major diminished seventh chord.", "The diminished seventh chord of E major is E, G, B♭, and C♯."},
+                {"b major diminished seventh chord.", "The diminished seventh chord of B major is B, D, F, and G♯."},
+                {"f sharp major diminished seventh chord.", "The diminished seventh chord of F♯ major is F♯, A, C, and D♯."},
+                {"c sharp major diminished seventh chord.", "The diminished seventh chord of C♯ major is C♯, E, G, and A♯."},
+            
+                {"a minor diminished seventh chord.", "The diminished seventh chord of A minor is A, C, E♭, and G."},
+            
+                {"e minor diminished seventh chord.", "The diminished seventh chord of E minor is E, G, B♭, and D."},
+                {"b minor diminished seventh chord.", "The diminished seventh chord of B♭ minor is B, D, F, and A♭."},
+                {"f sharp minor diminished seventh chord.", "The diminished seventh chord of F♯ minor is F♯, A, C, and E."},
+                {"c sharp minor diminished seventh chord.", "The diminished seventh chord of C♯ minor is C♯, E, G, and B."},
+                {"g sharp minor diminished seventh chord.", "The diminished seventh chord of G♯ minor is G♯, B, D, and F♯."},
+                {"d sharp minor diminished seventh chord.", "The diminished seventh chord of D♯ minor is D♯, F♯, A, and C♯."},
+                {"a sharp minor diminished seventh chord.", "The diminished seventh chord of A♯ minor is A♯, C♯, E, and G♯."},
+            
+                {"f major diminished seventh chord.", "The diminished seventh chord of F major is F, A♭, B, and D."},
+                {"b flat major diminished seventh chord.", "The diminished seventh chord of B♭ major is B♭, D♭, E, and G."},
+                {"e flat major diminished seventh chord.", "The diminished seventh chord of E♭ major is E♭, G♭, A, and B."},
+                {"a flat major diminished seventh chord.", "The diminished seventh chord of A♭ major is A♭, C♭, D, and E."},
+                {"d flat major diminished seventh chord.", "The diminished seventh chord of D♭ major is D♭, F♭, G, and A."},
+                {"g flat major diminished seventh chord.", "The diminished seventh chord of G♭ major is G♭, B♭, C, and D."},
+                {"c flat major diminished seventh chord.", "The diminished seventh chord of C♭ major is C♭, E♭, F, and G."},
+            
+                {"d minor diminished seventh chord.", "The diminished seventh chord of D minor is D, F, A♭, and B♭."},
+                {"g minor diminished seventh chord.", "The diminished seventh chord of G minor is G, B♭, D♭, and E♭."},
+                {"c minor diminished seventh chord.", "The diminished seventh chord of C minor is C, E♭, G♭, and A♭."},
+                {"f minor diminished seventh chord.", "The diminished seventh chord of F minor is F, A♭, B, and D."},
+                {"b flat minor diminished seventh chord.", "The diminished seventh chord of B♭ minor is B♭, D♭, E, and G♭."},
+                {"e flat minor diminished seventh chord.", "The diminished seventh chord of E♭ minor is E♭, G♭, B♭, and D."},
+                {"a flat minor diminished seventh chord.", "The diminished seventh chord of A♭ minor is A♭, C♭, D, and E."}
             };
             _text = _text.ToLower();
             string[] text = _text.Split(new char[] {' ', '-'}); 
