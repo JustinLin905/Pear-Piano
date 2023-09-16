@@ -9,8 +9,8 @@ public class HandTrigger : MonoBehaviour
     public UnityEvent actionEvent;
     public UnityEvent defaultEvent;
     public string pitch;
+    public AudioSource soundPlayer;
 
-    public AudioClip sound;
     public Material redMaterial;
     public Material greenMaterial;
     public GameObject defaultAnchor;
@@ -23,7 +23,7 @@ public class HandTrigger : MonoBehaviour
         GameObject noteTrackerObject = GameObject.Find("Note Tracker");
         noteTracker = noteTrackerObject.GetComponent<NoteTracker>();
         pitch = transform.parent.GetComponent<KeyData>().pitch;
-        Debug.Log("PITCH: " + pitch);
+        //Debug.Log("PITCH: " + pitch);
     }
 
 
@@ -43,6 +43,8 @@ public class HandTrigger : MonoBehaviour
 
         GetComponent<Renderer>().material = greenMaterial;
         currentNote.startTime = Time.time;
+
+        soundPlayer.Play();
     }
 
     public void OnHandExit() {
@@ -55,6 +57,8 @@ public class HandTrigger : MonoBehaviour
         noteTracker.notes.Add(currentNote);
 
         noteTracker.PrintNotes();
+
+        soundPlayer.Stop();
     }
 
     public void ResetPosition() {
