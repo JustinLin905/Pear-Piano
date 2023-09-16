@@ -18,12 +18,16 @@ public class HandTrigger : MonoBehaviour
     private Note currentNote;
     NoteTracker noteTracker;
 
+    private RecordMode recordingMode;
+
     void Start() {
         // Find object called Note Tracker in scene, get component Note Tracker
         GameObject noteTrackerObject = GameObject.Find("Note Tracker");
         noteTracker = noteTrackerObject.GetComponent<NoteTracker>();
         pitch = transform.parent.GetComponent<KeyData>().pitch;
         //Debug.Log("PITCH: " + pitch);
+
+        recordingMode = GameObject.Find("Recording Controller").GetComponent<RecordMode>();
     }
 
 
@@ -38,18 +42,28 @@ public class HandTrigger : MonoBehaviour
     }
 
     public void OnHandEnter() {
+        GetComponent<Renderer>().material = greenMaterial;
+        GetComponent<Renderer>().material = greenMaterial;
+
+        if (!recordingMode.isRecording) {
+            return;
+        }
+
         // Change the material of this gameobject
         currentNote = new Note(transform.position.x);
 
-        GetComponent<Renderer>().material = greenMaterial;
-        currentNote.startTime = Time.time;
-
-        soundPlayer.Play();
+        currentNote.startTime = recordingMode.time; 
     }
 
     public void OnHandExit() {
         // Change the material of this gameobject
         GetComponent<Renderer>().material = redMaterial;
+        soundPlayer.Stop();
+
+        if (!recordingMode.isRecording) {
+            return;
+        }
+
         currentNote.endTime = Time.time;
         if (noteTracker == null) {
             Debug.Log("Note Tracker is null");
@@ -57,8 +71,6 @@ public class HandTrigger : MonoBehaviour
         noteTracker.notes.Add(currentNote);
 
         noteTracker.PrintNotes();
-
-        soundPlayer.Stop();
     }
 
     public void ResetPosition() {

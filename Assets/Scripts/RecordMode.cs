@@ -4,6 +4,8 @@ using TMPro;
 
 public class RecordMode : MonoBehaviour
 {
+    public NoteBlocks noteBlocks;
+
     public GameObject beforeRecording;
     public GameObject afterRecording;
     public GameObject playbackUI;
@@ -11,7 +13,7 @@ public class RecordMode : MonoBehaviour
     public TextMeshProUGUI header;
     public TextMeshProUGUI timerText;
 
-    private bool isRecording = false;
+    public bool isRecording = false;
 
     // Start is called before the first frame update
     void Start()
@@ -52,5 +54,8 @@ public class RecordMode : MonoBehaviour
         header.text = "Playback";
         afterRecording.SetActive(false);
         playbackUI.SetActive(true);
+
+        // GENERATE BLOCKS
+        noteBlocks.LoadNoteBlocks();
     }
 }

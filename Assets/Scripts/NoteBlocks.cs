@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class NoteBlocks : MonoBehaviour
 {
+    public PlaybackMode playbackMode;
+
     NoteTracker noteTracker;
     public float speed = 1; // set negative when moving blocks
-    public float zOffset = 1;
+    public float zOffset = 2;
     public GameObject noteBlock;
     public float songStartTime;
     // Start is called before the first frame update
@@ -19,10 +21,16 @@ public class NoteBlocks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (playbackMode.isPlaying) {
+            MoveNoteBlocks();
+        }
+
+        else if (playbackMode.isReversing) {
+            MoveNoteBlocksReverse();
+        }
     }
 
-    private void LoadNoteBlocks () {
+    public void LoadNoteBlocks () {
         if (noteTracker == null) return;
 
         foreach (Note n in noteTracker.notes) {
@@ -40,5 +48,35 @@ public class NoteBlocks : MonoBehaviour
         pos.z = zPos;
         pos.x = note.xPos;
         newNoteBlock.transform.position = pos;
+        newNoteBlock.transform.localScale = new Vector3(1, 1, zScale);
+
+        // Set tag to Note Block
+        newNoteBlock.tag = "Note Block";
+
+        Debug.Log("Instantiated Note Block at " + pos);
+    }
+
+    private void MoveNoteBlocks() {
+        // Find all Note Blocks
+        GameObject[] noteBlocks = GameObject.FindGameObjectsWithTag("Note Block");
+
+        // Move each Note Block
+        foreach (GameObject noteBlock in noteBlocks) {
+            Vector3 pos = noteBlock.transform.position;
+            pos.z -= speed * Time.deltaTime;
+            noteBlock.transform.position = pos;
+        }
+    }
+
+    private void MoveNoteBlocksReverse() {
+        // Find all Note Blocks
+        GameObject[] noteBlocks = GameObject.FindGameObjectsWithTag("Note Block");
+
+        // Move each Note Block
+        foreach (GameObject noteBlock in noteBlocks) {
+            Vector3 pos = noteBlock.transform.position;
+            pos.z += speed * Time.deltaTime;
+            noteBlock.transform.position = pos;
+        }
     }
 }

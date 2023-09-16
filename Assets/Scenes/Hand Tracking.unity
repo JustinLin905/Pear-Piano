@@ -2652,6 +2652,55 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1 &547258418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 547258420}
+  - component: {fileID: 547258419}
+  m_Layer: 0
+  m_Name: Note Block Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &547258419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547258418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9305be1f582741f4787e0ddd0bd8e4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playbackMode: {fileID: 176532816}
+  speed: 1
+  zOffset: 35
+  noteBlock: {fileID: 8390207660270850191, guid: 1ab1494d6739b574a8ab18a25b2c4104, type: 3}
+  songStartTime: 0
+--- !u!4 &547258420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547258418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9341351, y: 0.20752138, z: 1.8225917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557833391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3798,7 +3847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2643082449225513557, guid: 6a86d201e1493784e9798309c7a477f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2643082449225513557, guid: 6a86d201e1493784e9798309c7a477f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5993,6 +6042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde3c4148d621274d96621af0cadfb81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noteBlocks: {fileID: 547258419}
   beforeRecording: {fileID: 49056104}
   afterRecording: {fileID: 1528814622}
   playbackUI: {fileID: 195871359}
@@ -8585,3 +8635,4 @@ SceneRoots:
   - {fileID: 567986861}
   - {fileID: 1427225423}
   - {fileID: 176532817}
+  - {fileID: 547258420}
