@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1431092708459057860}
+  - component: {fileID: 6124703866962946191}
   m_Layer: 0
   m_Name: White Key
   m_TagString: Untagged
@@ -66,6 +67,19 @@ Transform:
   - {fileID: 8564977908678388464}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6124703866962946191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072568815265037003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7ec10309ea4d841b47d448b20b696c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pitch: 
 --- !u!1 &3245302973676659627
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,11 +235,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  pitch: 
   sound: {fileID: 0}
   redMaterial: {fileID: 2100000, guid: de74caac733bb2e4c993e1b05fcf7212, type: 2}
   greenMaterial: {fileID: 2100000, guid: 02e70e47197151547b0eb4c47a876b18, type: 2}
   defaultAnchor: {fileID: 818210916826032326}
-  pitch: 
 --- !u!54 &7596098544878784598
 Rigidbody:
   m_ObjectHideFlags: 0

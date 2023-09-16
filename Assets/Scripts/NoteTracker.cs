@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class NoteTracker : MonoBehaviour
 {
-    public static NoteTracker instance;
     public List<Note> notes;
+
+    public void PrintNotes() {
+        foreach (Note n in notes) {
+            Debug.Log("LOGGED NOTE: " + n.pitch + " " + n.startTime + " " + n.endTime);
+        }
+    }
 }

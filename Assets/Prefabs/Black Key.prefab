@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4697180887501495154}
+  - component: {fileID: 6826305222345454280}
   m_Layer: 0
   m_Name: Black Key
   m_TagString: Untagged
@@ -171,6 +172,19 @@ Transform:
   - {fileID: 8079219037362583488}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6826305222345454280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647108693453692349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7ec10309ea4d841b47d448b20b696c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pitch: 
 --- !u!1 &7850322501360043372
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,11 +343,11 @@ MonoBehaviour:
   defaultEvent:
     m_PersistentCalls:
       m_Calls: []
+  pitch: 
   sound: {fileID: 0}
   redMaterial: {fileID: 2100000, guid: de74caac733bb2e4c993e1b05fcf7212, type: 2}
   greenMaterial: {fileID: 2100000, guid: 02e70e47197151547b0eb4c47a876b18, type: 2}
   defaultAnchor: {fileID: 5775010859908091813}
-  pitch: 
 --- !u!114 &6839784324672845273
 MonoBehaviour:
   m_ObjectHideFlags: 0

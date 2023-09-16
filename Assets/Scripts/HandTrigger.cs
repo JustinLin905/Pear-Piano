@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,18 +8,23 @@ public class HandTrigger : MonoBehaviour
 {
     public UnityEvent actionEvent;
     public UnityEvent defaultEvent;
+    public string pitch;
 
     public AudioClip sound;
     public Material redMaterial;
     public Material greenMaterial;
     public GameObject defaultAnchor;
 
-    private Note n;
-    public string pitch;
+    private Note currentNote;
+    NoteTracker noteTracker;
 
     void Start() {
-        // GetComponent<ButtonController>().InteractableStateChanged.AddListener(InitiateEvent);
+        // Find object called Note Tracker in scene, get component Note Tracker
+        GameObject noteTrackerObject = GameObject.Find("Note Tracker");
+        noteTracker = noteTrackerObject.GetComponent<NoteTracker>();
+        pitch = transform.parent.GetComponent<KeyData>().pitch;
     }
+
 
     void InitiateEvent(InteractableStateArgs state) {
         if (state.NewInteractableState == InteractableState.ActionState) {
@@ -31,37 +36,21 @@ public class HandTrigger : MonoBehaviour
         }
     }
 
-    // void OnTriggerEnter(Collider other) {
-    //     n.startTime = Time.time;
-    //     n.pitch = pitch;
-
-    //     // Find child GameObject named Block Trigger
-    //     GameObject blockTrigger = transform.Find("Block Trigger").gameObject;
-
-    //     // Change materail to green
-    //     blockTrigger.GetComponent<Renderer>().material = greenMaterial;
-
-    // }
-
-    // void OnTriggerExit(Collider other) {
-    //     n.endTime = Time.time;
-    //     NoteTracker.instance.notes.Add(n);
-
-    //     // Find child GameObject named Block Trigger
-    //     GameObject blockTrigger = transform.Find("Block Trigger").gameObject;
-
-    //     // Change materail to green
-    //     blockTrigger.GetComponent<Renderer>().material = redMaterial;
-    // }
-
     public void OnHandEnter() {
         // Change the material of this gameobject
+        currentNote = new Note(pitch);
+
         GetComponent<Renderer>().material = greenMaterial;
+        currentNote.startTime = Time.time;
     }
 
     public void OnHandExit() {
         // Change the material of this gameobject
         GetComponent<Renderer>().material = redMaterial;
+        currentNote.endTime = Time.time;
+        noteTracker.notes.Add(currentNote);
+
+        noteTracker.PrintNotes();
     }
 
     public void ResetPosition() {
