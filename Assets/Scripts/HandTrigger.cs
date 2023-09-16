@@ -12,6 +12,7 @@ public class HandTrigger : MonoBehaviour
     public AudioClip sound;
     public Material redMaterial;
     public Material greenMaterial;
+    public GameObject defaultAnchor;
 
     private Note n;
     public string pitch;
@@ -30,26 +31,44 @@ public class HandTrigger : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other) {
-        n.startTime = Time.time;
-        n.pitch = pitch;
+    // void OnTriggerEnter(Collider other) {
+    //     n.startTime = Time.time;
+    //     n.pitch = pitch;
 
-        // Find child GameObject named Block Trigger
-        GameObject blockTrigger = transform.Find("Block Trigger").gameObject;
+    //     // Find child GameObject named Block Trigger
+    //     GameObject blockTrigger = transform.Find("Block Trigger").gameObject;
 
-        // Change materail to green
-        blockTrigger.GetComponent<Renderer>().material = greenMaterial;
+    //     // Change materail to green
+    //     blockTrigger.GetComponent<Renderer>().material = greenMaterial;
 
+    // }
+
+    // void OnTriggerExit(Collider other) {
+    //     n.endTime = Time.time;
+    //     NoteTracker.instance.notes.Add(n);
+
+    //     // Find child GameObject named Block Trigger
+    //     GameObject blockTrigger = transform.Find("Block Trigger").gameObject;
+
+    //     // Change materail to green
+    //     blockTrigger.GetComponent<Renderer>().material = redMaterial;
+    // }
+
+    public void OnHandEnter() {
+        // Change the material of this gameobject
+        GetComponent<Renderer>().material = greenMaterial;
     }
 
-    void OnTriggerExit(Collider other) {
-        n.endTime = Time.time;
-        NoteTracker.instance.notes.Add(n);
+    public void OnHandExit() {
+        // Change the material of this gameobject
+        GetComponent<Renderer>().material = redMaterial;
+    }
 
-        // Find child GameObject named Block Trigger
-        GameObject blockTrigger = transform.Find("Block Trigger").gameObject;
+    public void ResetPosition() {
+        // Reset the position of this gameobject
+        transform.position = defaultAnchor.transform.position;
 
-        // Change materail to green
-        blockTrigger.GetComponent<Renderer>().material = redMaterial;
+        // Reset rotation
+        transform.rotation = defaultAnchor.transform.rotation;
     }
 }
