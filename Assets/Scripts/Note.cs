@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Note
 {
-    public Note(string p) {
-        pitch = p;
+    public Note(float p) {
+        xPos = p;
     }
-    public string pitch;
+    public float xPos;
     public float startTime;
     public float endTime;
 }
