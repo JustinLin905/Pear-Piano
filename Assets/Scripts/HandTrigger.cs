@@ -39,7 +39,7 @@ public class HandTrigger : MonoBehaviour
 
     public void OnHandEnter() {
         // Change the material of this gameobject
-        currentNote = new Note(pitch);
+        currentNote = new Note(transform.position.x);
 
         GetComponent<Renderer>().material = greenMaterial;
         currentNote.startTime = Time.time;
