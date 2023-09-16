@@ -236,7 +236,10 @@ namespace OpenAI
             int sze = text.Length-1; 
             string search = text[sze];
             for (int i = sze - 1; i > 0; i--) {
-                if (text[i].Length >= 1) search = text[i] + " " + search;
+                if (text[i].Length >= 1) {
+                    if (text[i] == "7th") search = "seventh " + search;
+                    else search = text[i] + " " + search;
+                }
                 if (text[i].Length == 1) break;
             }
 
