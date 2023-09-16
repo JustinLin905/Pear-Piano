@@ -23,6 +23,7 @@ public class HandTrigger : MonoBehaviour
         GameObject noteTrackerObject = GameObject.Find("Note Tracker");
         noteTracker = noteTrackerObject.GetComponent<NoteTracker>();
         pitch = transform.parent.GetComponent<KeyData>().pitch;
+        Debug.Log("PITCH: " + pitch);
     }
 
 
@@ -48,6 +49,9 @@ public class HandTrigger : MonoBehaviour
         // Change the material of this gameobject
         GetComponent<Renderer>().material = redMaterial;
         currentNote.endTime = Time.time;
+        if (noteTracker == null) {
+            Debug.Log("Note Tracker is null");
+        }
         noteTracker.notes.Add(currentNote);
 
         noteTracker.PrintNotes();
