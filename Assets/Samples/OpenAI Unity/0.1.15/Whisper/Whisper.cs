@@ -121,7 +121,7 @@ namespace OpenAI
                 { "f minor.", "F minor has four flats, B♭, E♭, A♭, and D♭."},
                 { "b flat minor.", "B♭ minor has five flats, B♭, E♭, A♭, D♭, and G♭."},
                 { "e flat minor.", "E♭ minor has six flats, B♭, E♭, A♭, D♭, G♭, and C♭."},
-                { "a flat minor.", "A♭ minor has seven flats, B♭, E♭, A♭, D♭, G♭, C♭, and F♭."}
+                { "a flat minor.", "A♭ minor has seven flats, B♭, E♭, A♭, D♭, G♭, C♭, and F♭."},
 
                 // triads
                 {"c major chord", "The notes in the C major chord are C, E, G."},
@@ -236,7 +236,10 @@ namespace OpenAI
             int sze = text.Length-1; 
             string search = text[sze];
             for (int i = sze - 1; i > 0; i--) {
-                if (text[i].Length >= 1) search = text[i] + " " + search;
+                if (text[i].Length >= 1) {
+                    if (text[i] == "7th") search = "seventh " + search;
+                    else search = text[i] + " " + search;
+                }
                 if (text[i].Length == 1) break;
             }
 
