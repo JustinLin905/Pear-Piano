@@ -6,14 +6,14 @@ public class BlockTrigger : MonoBehaviour
 {
     public AudioSource soundPlayer;
     void OnTriggerEnter(Collider other) {
-        if (other.name == "Block") {
+        if (other.tag == "Note Block") {
             soundPlayer.Play();
         }
        
     }
 
     void OnTriggerExit(Collider other) {
-        if (other.name == "Block") {
+        if (other.tag == "Note Block") {
             soundPlayer.Stop();
         }
     }
