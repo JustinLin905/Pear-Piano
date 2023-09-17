@@ -4203,7 +4203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playbackMode: {fileID: 176532816}
   speed: 0.35
-  zOffset: 1
+  zOffset: 0
   noteBlock: {fileID: 8390207660270850191, guid: 1ab1494d6739b574a8ab18a25b2c4104, type: 3}
   songStartTime: 0
 --- !u!4 &547258420
