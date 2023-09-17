@@ -5,6 +5,7 @@ using TMPro;
 
 public class PearAnswer : MonoBehaviour
 {
+    public PearAnimations pearAnimations;
     public GameObject answerWindow;
     public TextMeshProUGUI answerText;
 
@@ -28,5 +29,6 @@ public class PearAnswer : MonoBehaviour
         answerText.text = answer;
         // Play animation on windowAnimator named "Grow Window"
         windowAnimator.Play("Grow Window");
+        pearAnimations.PearAnswerAnimation();
     }
 }
