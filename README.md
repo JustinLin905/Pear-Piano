@@ -1,3 +1,5 @@
+[Check out the Devpost submission for a video demo and images!](https://devpost.com/software/pear-piano)
+
 ## Inspiration
 Composing music through scribbling notes or drag-and-dropping from MuseScore couldn't be more tedious. As pianists ourselves, we know the struggle of trying to bring our impromptu sessions to life without forgetting what we just played or having to record ourselves and write out the notes one by one. 
 
