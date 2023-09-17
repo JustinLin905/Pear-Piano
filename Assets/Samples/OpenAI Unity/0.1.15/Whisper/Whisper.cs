@@ -110,7 +110,7 @@ namespace OpenAI
                 { "a sharp minor", "A# minor has seven sharps, F#, C#, G#, D#, A#, E#, and B#."},
 
                 { "f major", "F major has one flat, B♭."},
-                { "b flat major", "B♭ major has two flats,  B♭ and E♭."},
+                { "b flat major", "B♭ major has two flats, B♭ and E♭."},
                 { "e flat major", "E♭ major has three flats, B♭, E♭, and A♭."},
                 { "a flat major", "A♭ major has four flats, B♭, E♭, A♭, and D♭."},
                 { "d flat major", "D♭ major has five flats, B♭, E♭, A♭, D♭, and G♭."},
