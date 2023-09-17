@@ -8,7 +8,7 @@ public class NoteBlocks : MonoBehaviour
 
     NoteTracker noteTracker;
     public float speed = 1; // set negative when moving blocks
-    public float zOffset = 2;
+    public float zOffset = 0;
     public GameObject noteBlock;
     public float songStartTime;
     // Start is called before the first frame update
@@ -41,14 +41,18 @@ public class NoteBlocks : MonoBehaviour
 
     private void InstantiateNoteBlock(Note note) {
         GameObject newNoteBlock = Instantiate(noteBlock);
-        float zPos = zOffset + note.startTime * speed;
-        float zScale = note.endTime - note.startTime * speed;
+        float zPos = zOffset + (note.startTime * speed);
+        float zScale = (note.endTime - note.startTime) * speed;
 
         Vector3 pos = newNoteBlock.transform.position;
         pos.z = zPos;
         pos.x = note.xPos;
         newNoteBlock.transform.position = pos;
-        newNoteBlock.transform.localScale = new Vector3(1, 1, zScale);
+        
+        // Set Z scale of Note Block
+        Vector3 scale = newNoteBlock.transform.localScale;
+        scale.z = zScale;
+        newNoteBlock.transform.localScale = scale;
 
         // Set tag to Note Block
         newNoteBlock.tag = "Note Block";

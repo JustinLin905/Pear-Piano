@@ -44,6 +44,7 @@ public class HandTrigger : MonoBehaviour
     public void OnHandEnter() {
         GetComponent<Renderer>().material = greenMaterial;
         GetComponent<Renderer>().material = greenMaterial;
+        soundPlayer.Play();
 
         if (!recordingMode.isRecording) {
             return;
@@ -64,7 +65,7 @@ public class HandTrigger : MonoBehaviour
             return;
         }
 
-        currentNote.endTime = Time.time;
+        currentNote.endTime = recordingMode.time;
         if (noteTracker == null) {
             Debug.Log("Note Tracker is null");
         }

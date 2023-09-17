@@ -2682,8 +2682,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playbackMode: {fileID: 176532816}
-  speed: 1
-  zOffset: 35
+  speed: 0.35
+  zOffset: 0
   noteBlock: {fileID: 8390207660270850191, guid: 1ab1494d6739b574a8ab18a25b2c4104, type: 3}
   songStartTime: 0
 --- !u!4 &547258420
@@ -2737,10 +2737,10 @@ RectTransform:
   - {fileID: 642405578}
   m_Father: {fileID: 282367967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 341, y: -75}
-  m_SizeDelta: {x: 210, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &557833393
 MonoBehaviour:
@@ -3723,10 +3723,10 @@ RectTransform:
   - {fileID: 751645597}
   m_Father: {fileID: 282367967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 561, y: -75}
-  m_SizeDelta: {x: 210, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774906509
 MonoBehaviour:
@@ -6049,6 +6049,7 @@ MonoBehaviour:
   time: 0
   header: {fileID: 1160648038}
   timerText: {fileID: 88216889}
+  isRecording: 0
 --- !u!4 &1427225423
 Transform:
   m_ObjectHideFlags: 0
@@ -7103,10 +7104,10 @@ RectTransform:
   - {fileID: 1459674119}
   m_Father: {fileID: 282367967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 781, y: -75}
-  m_SizeDelta: {x: 210, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786925638
 MonoBehaviour:
@@ -7491,10 +7492,10 @@ RectTransform:
   - {fileID: 176094901}
   m_Father: {fileID: 282367967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 121, y: -75}
-  m_SizeDelta: {x: 210, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839357826
 MonoBehaviour:
