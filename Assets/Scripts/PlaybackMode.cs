@@ -13,6 +13,7 @@ public class PlaybackMode : MonoBehaviour
 
     public GameObject playButtons;
     public GameObject pauseButton;
+    public GameObject mainMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -82,5 +83,9 @@ public class PlaybackMode : MonoBehaviour
     {
         isPlaying = false;
         isReversing = false;
+    }
+
+    public void ToggleMainMenu() {
+        mainMenu.SetActive(!mainMenu.activeSelf);
     }
 }

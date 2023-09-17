@@ -12,6 +12,7 @@ public class RecordMode : MonoBehaviour
     public float time = 0f;
     public TextMeshProUGUI header;
     public TextMeshProUGUI timerText;
+    public GameObject mainMenu;
 
     public bool isRecording = false;
 
@@ -42,6 +43,7 @@ public class RecordMode : MonoBehaviour
     {
         beforeRecording.SetActive(false);
         afterRecording.SetActive(true);
+        mainMenu.SetActive(false);
         time = 0f;
         isRecording = true;
 
