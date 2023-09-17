@@ -17,15 +17,17 @@ public class KeyHighlighter : MonoBehaviour
             if (answer.Contains("#")) {
                 int [] indices = getSharpKeySigIndices(answer);
                 foreach (int i in indices) {
+                    Debug.Log("INDEX: " + i);
+                    // Find trigger in children of sharps[i]
                     trigger = sharps[i].transform.Find("Hand Trigger").gameObject;
-                    HighlightTrigger(trigger);
-                    
+                    StartCoroutine(HighlightTrigger(trigger));
                 }
             } else {
                 int [] indices = getFlatKeySigIndices(answer);
+                Debug.Log("FLAT INDICES: " + indices.Length);
                 foreach (int i in indices) {
-                    trigger = flats[i].transform.Find("HandTrigger").gameObject;
-                    HighlightTrigger(trigger);
+                    trigger = flats[i].transform.Find("Hand Trigger").gameObject;
+                    StartCoroutine(HighlightTrigger(trigger));
                 }
             }
         }
@@ -54,8 +56,9 @@ public class KeyHighlighter : MonoBehaviour
     }
 
     IEnumerator HighlightTrigger(GameObject trigger) {
+        Debug.Log("HIGHLIGHTING TRIGGER");
         trigger.GetComponent<Renderer>().material = highlight;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(10f);
         trigger.GetComponent<Renderer>().material = normal;
     }
 }

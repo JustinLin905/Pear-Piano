@@ -20,7 +20,7 @@ namespace OpenAI
             }
         };
         
-        public Configuration(string apiKey = null, string organization = null)
+        public Configuration(string apiKey = "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", string organization = null)
         {
             if (apiKey == null)
             {

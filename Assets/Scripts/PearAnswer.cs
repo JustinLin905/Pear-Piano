@@ -10,6 +10,7 @@ public class PearAnswer : MonoBehaviour
     public TextMeshProUGUI answerText;
 
     private Animator windowAnimator;
+    public KeyHighlighter keyHighlighter;
 
     // Start is called before the first frame update
     void Start()
@@ -30,5 +31,6 @@ public class PearAnswer : MonoBehaviour
         // Play animation on windowAnimator named "Grow Window"
         windowAnimator.Play("Grow Window");
         pearAnimations.PearAnswerAnimation();
+        keyHighlighter.HighlightKeys(answer);
     }
 }
